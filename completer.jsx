@@ -118,8 +118,8 @@ function fillLayer(layer) {
 }
 
 function getFontDisplay(textItemRef) {
-  return textItemRef.font + '\r' + Math.round(textItemRef.size) + ' ' + userFriendlyConstant(app.preferences.typeUnits) + '\r#' + textItemRef.color.nearestWebColor.hexValue;
-}
+  return textItemRef.font + '\r' + Math.round(textItemRef.size) + ' ' + userFriendlyConstant(app.preferences.typeUnits) + '\r#' + textItemRef.color.rgb.hexValue.toLowerCase();
+  }
 
 function main()
 {
