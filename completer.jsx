@@ -3,6 +3,10 @@
 
 #target photoshop
 
+// General Settings
+var selection_expansion = 5; // amount of pixels padding from text outlines
+var text_size = 12; // description text size
+
 main();
 
 ///////////////////////////////////////////////////////////////////////////
@@ -109,7 +113,7 @@ function fillLayer(layer) {
   
   //activeDocument.selection.select([[0,0], [50,0], [50,50], [0,50]], SelectionType.REPLACE, 0, false);
   activeDocument.selection.select([c, d, b, a], SelectionType.REPLACE, 0, false);
-  activeDocument.selection.expand(10);
+  activeDocument.selection.expand(selection_expansion);
   activeDocument.selection.fill(fillColor, ColorBlendMode.NORMAL, 100, false);
 }
 
@@ -161,7 +165,7 @@ function main()
       textColor.rgb.blue = 255;
       
       textItemRef.color = textColor;
-      textItemRef.size = 6;
+      textItemRef.size = text_size;
       
       //artLayerRef.translate(500, 500); // move relative to it's original position
       positionLayer(artLayerRef, layer.bounds[0], layer.bounds[1]);
