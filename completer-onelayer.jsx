@@ -1,7 +1,5 @@
 // This script will overlay the current text layer with a new text font information layer
 // Based on work by David Klawitter, https://github.com/davidklaw/completer
-// TODO better default font for label (pixel font?)
-// TODO one-step-undo to pre-script state (how?)
 
 /*
 <javascriptresource>
@@ -97,17 +95,21 @@ function main() {
     artLayerRef.kind = LayerKind.TEXT;
     var textItemRef = artLayerRef.textItem;
     textItemRef.contents = getFontDisplay(layer.textItem);
+    // Set Text Color
     var textColor = new SolidColor();
     textColor.rgb.red = 255;
     textColor.rgb.green = 255;
     textColor.rgb.blue = 255;
     textItemRef.color = textColor;
-    textItemRef.size = 12;
+    // Set Font
+    textItemRef.font = "Monaco";
+    textItemRef.size = 9;
+    textItemRef.antiAliasMethod = AntiAlias.NONE;
+    // Fill 
     positionLayer(artLayerRef, layer.bounds[0], layer.bounds[1]);
     activeDocument.activeLayer = fillLayerRef;
     fillLayer(artLayerRef);
-
-    // Create Layer Set And Move New Items There
+    // Create LayerSet containing BackgroundLayer and HintLayer
     var layerSetRef = doc.layerSets.add();
     layerSetRef.name = "TextLabel (" + run_time + ")";
     fillLayerRef.move(layerSetRef, ElementPlacement.INSIDE);
