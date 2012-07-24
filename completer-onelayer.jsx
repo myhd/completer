@@ -3,6 +3,13 @@
 // TODO better default font for label (pixel font?)
 // TODO one-step-undo to pre-script state (how?)
 
+/*
+<javascriptresource>
+<name>Completer for One Layer</name>
+<category>Completer</category>
+</javascriptresource>
+*/
+
 #target photoshop
 
 app.activeDocument.suspendHistory('Label Text Layer', 'main()');

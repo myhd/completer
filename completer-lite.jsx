@@ -1,6 +1,13 @@
-// This script will search your layers for font information and pop up a complete list of fonts used
+// This script will search layers for font information and show a list of fonts used
 // TODO: Save font list to file
 // Written by David Klawitter
+
+/*
+<javascriptresource>
+<name>Completer Lite</name>
+<category>Completer</category>
+</javascriptresource>
+*/
 
 
 #target photoshop

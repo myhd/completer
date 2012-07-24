@@ -1,6 +1,13 @@
 // This script will (eventually) apply each comp and then export to a PDF Presentation with overlays of font information
 // Written by David Klawitter
 
+/*
+<javascriptresource>
+<name>Completer</name>
+<category>Completer</category>
+</javascriptresource>
+*/
+
 #target photoshop
 
 // General Settings
