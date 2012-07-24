@@ -1,6 +1,7 @@
 // This script will search your layers for font information and pop up a complete list of fonts used
-
+// TODO: Save font list to file
 // Written by David Klawitter
+
 
 #target photoshop
 
@@ -42,6 +43,17 @@ function findTextLayers(doc, foundLayers) {
   }
 }
 
+function unique(array){
+  var o = {},b = [];
+  for(var i=0;i<array.length;i++){
+     if(!o[array[i]]){
+       b.push(array[i]);
+       o[array[i]] = true;
+     }
+  }
+  return b;
+}
+
 function main()
 {
   var doc = app.activeDocument;
@@ -51,6 +63,7 @@ function main()
    
   // Sort, remove duplicates and display results
   var sorted_arr = textLayers.sort();
+  sorted_arr = unique(sorted_arr);
   
   sorted_arr.reverse();
   sorted_arr.push("Font Usage");
