@@ -5,7 +5,7 @@
 
 #target photoshop
 
-main();
+app.activeDocument.suspendHistory('Label Text Layer', 'main()');
 
 function positionLayer(lyr, x, y) { // layerObject, Number, Number
     // if can not move layer return
